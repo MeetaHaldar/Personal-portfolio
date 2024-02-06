@@ -59,6 +59,7 @@ export const projectsData = [
       "This is a website that shows the UI for a payment methods in dark and classy mode",
     tags: ["Reactjs","Tailwind","CSS"],
     imageUrl: HooBankImage,
+    url : 'https://sundown-seven.vercel.app/'
   },
   {
     title: "Magma",
@@ -66,6 +67,7 @@ export const projectsData = [
       "This website shows the feature of parallax method and great UI complexion",
     tags: ["HTML", "CSS", "JavaScript"],
     imageUrl: MagmaImage,
+    url : 'https://magma-topaz.vercel.app/'
   },
   {
     title: "Sundown",
@@ -73,6 +75,7 @@ export const projectsData = [
       "A public web app forshowcase of great UI having great animation.",
     tags: ["HTML", "CSS", "JavaScript"],
     imageUrl: SundownImage,
+    url : 'https://sundown-seven.vercel.app/'
   },
 ] as const;
 
