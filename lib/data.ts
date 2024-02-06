@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import HooBankImage from "@/public/HooBank.png";
+import MagmaImage from "@/public/Magma.png";
+import SundownImage from "@/public/Sumdown.png";
 
 export const links = [
   {
@@ -58,21 +58,21 @@ export const projectsData = [
     description:
       "This is a website that shows the UI for a payment methods in dark and classy mode",
     tags: ["Reactjs","Tailwind","CSS"],
-    imageUrl: corpcommentImg,
+    imageUrl: HooBankImage,
   },
   {
     title: "Magma",
     description:
       "This website shows the feature of parallax method and great UI complexion",
     tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: rmtdevImg,
+    imageUrl: MagmaImage,
   },
   {
     title: "Sundown",
     description:
       "A public web app forshowcase of great UI having great animation.",
     tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: SundownImage,
   },
 ] as const;
 
