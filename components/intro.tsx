@@ -9,6 +9,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import Meeta from "@/public/MeetaHaldar.jpg"
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -31,7 +32,7 @@ export default function Intro() {
             }}
           >
             <Image
-              src=""
+              src={Meeta}
               alt="Meeta Haldar"
               width="192"
               height="192"
@@ -91,7 +92,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="https://drive.google.com/file/d/1VoPskblt1QGauWy4ACLSZuWm506uklaJ/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1AzKHMEruS6MOjnYQ75P0hnSrM1kaASdI/view?usp=drive_link"
           download
         >
           Download CV{" "}
@@ -100,7 +101,7 @@ export default function Intro() {
 
         <a
           className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://linkedin.com/in/meetahaldar/"
+          href="https://www.linkedin.com/in/meeta-haldar-236091332/"
           target="_blank"
         >
           <BsLinkedin />

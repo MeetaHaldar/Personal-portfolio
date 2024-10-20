@@ -1,10 +1,9 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import HooBankImage from "@/public/HooBank.png";
-import MagmaImage from "@/public/Magma.png";
-import SundownImage from "@/public/Sumdown.png";
+import DailyWave from "@/public/DailyWave.png";
+import DribbleIT from "@/public/DribbleIT.png";
+import ContactKeeper from "@/public/ContactKeeper.png";
 
 export const links = [
   {
@@ -35,48 +34,64 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Technical Engineer",
+    location: "GeeksForGeeks, Noida",
+    description: `Led multiple MERN stack projects, focusing on debugging and UI design. Improved user experience through optimized interfaces and
+quick resolution of technical issues. Wrote clear and comprehensive API documentation. Ensured easy understanding and smooth
+integration of APIs by other development team members`,
+    icon: React.createElement(CgWorkAlt),
+    date: "2023- Current",
+  },
+  {
     title: "Full stack web developer",
-    location: "New Dellhi",
-    description:
-      "When my graduation is going on i did this internship at Bismillah Enterprises.",
+    location: "New Delhi, Remote Work",
+    description: `Created APIs for adding/removing items from the cart and order processing. Ensured smooth communication between client and server. The APIs followed REST principles for scalability. Developed modular React components for product displays and shopping cart summaries. These components were designed for
+reuse across multiple pages, improving development efficiency and consistency.`,
     icon: React.createElement(LuGraduationCap),
     date: "2022",
   },
-  {
-    title: "Technical Content Engineer",
-    location: "GeeksForGeeks, Noida",
-    description:
-      "I worked as a Technical Content Engineer and wrote 20+ article and improved 500+ Articles. Also, I have reviewed 400+ Articles",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
-  }
 ] as const;
 
 export const projectsData = [
   {
-    title: "HooBank",
+    title: "Dribble-it",
     description:
-      "This is a website that shows the UI for a payment methods in dark and classy mode",
-    tags: ["Reactjs","Tailwind","CSS"],
-    imageUrl: HooBankImage,
-    url : 'https://sundown-seven.vercel.app/'
+      "Built a fully functional Dribbble clone with core features such as user authentication, allowing users to securely log in and manage their portfolios.",
+    tags: ["Reactjs", "NodeJS", "MongoDB"],
+    imageUrl: DribbleIT,
+    url: "https://dribble-clone-gamma.vercel.app/",
   },
   {
-    title: "Magma",
+    title: "DailyWave",
     description:
-      "This website shows the feature of parallax method and great UI complexion",
-    tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: MagmaImage,
-    url : 'https://magma-topaz.vercel.app/'
+      "Created a dynamic news app with a city-specific feature, allowing users to view news based on their selected location",
+    tags: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
+    imageUrl: DailyWave,
+    url: "https://daily-wave-pi4c.vercel.app/",
   },
   {
-    title: "Sundown",
+    title: "Contact Keeper App",
     description:
-      "A public web app forshowcase of great UI having great animation.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: SundownImage,
-    url : 'https://sundown-seven.vercel.app/'
+      "Implemented CRUD operations for adding, updating, and deleting contacts, with real-time database integration",
+    tags: ["HTML", "CSS", "NodeJS", "ExpressJS", "MongoDB"],
+    imageUrl: ContactKeeper,
+    url: "https://contact-keeper-jv6bxndng-meetahaldar.vercel.app/",
   },
 ] as const;
 
-export const skillsData = ["HTML","CSS", "JS", "Nodejs", "Reactjs","SASS", "Expressjs","TypeScript","MongoDB","Nextjs"] as const;
+export const skillsData = [
+  "HTML",
+  "CSS",
+  "JS",
+  "Nodejs",
+  "Reactjs",
+  "Bootstrap",
+  "Tailwind CSS",
+  "PHP",
+  "XAMPP",
+  "SASS",
+  "Expressjs",
+  "TypeScript",
+  "MongoDB",
+  "Nextjs",
+] as const;

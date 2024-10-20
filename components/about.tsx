@@ -20,7 +20,7 @@ export default function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
     After completing my BTech, I delved deep into the world of coding and technology, exploring various tech stacks including{" "}
-    <span className="font-medium">React.js, Node.js, and Vue.js</span>. With a knack for problem-solving, I crafted numerous personal projects and even interned as a full-stack developer, creating APIs for commercial websites. Additionally, my passion for tech extends to writing about it, leading me to intern as a Technical Content Engineer at GFG.
+    <span className="font-medium">React.js, Node.js, and Vue.js</span>. With a knack for problem-solving, I crafted numerous personal projects and even interned as a full-stack developer, creating APIs for commercial websites. Additionally, my passion for tech extends to writing about it, leading me to intern as a Technical Engineer at GFG.
 
 </p>
 
