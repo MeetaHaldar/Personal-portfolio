@@ -1,27 +1,58 @@
+# My Personal Portfolio
 
-## What you will learn
+Welcome to my personal portfolio! This website showcases my projects, skills, and experiences. Built with Next.js and TypeScript, it offers a fast and responsive user experience.
 
-- Latest Next.js 13 features
-- Next.js App Router
-- Next.js Server Actions
-- Client & Server Components
-- TypeScript (Beginner & Intermediate)
-- Tailwind CSS
-- Context API
-- Advanced Animations with Framer Motion
-- React.Email & Resend
-- Custom React hooks
-- Fresh, modern UI design
-- Light & Dark mode
-- Responsive website
+## Table of Contents
 
-## Important
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Contact](#contact)
 
-If you want to be a professional developer, you have to know the fundamentals like JavaScript and CSS really well. I highly recommend you go through my [Professional JavaScript](https://bytegrad.com/courses/professional-javascript) and [Professional CSS](https://bytegrad.com/courses/professional-css) courses.
+## Introduction
 
-I'm close to releasing a complete React & Next.js course. Get on the email list to receive early-bird pricing: [link](https://email.bytegrad.com/).
+This portfolio is designed to highlight my work as a Full STack Developer. It includes sections for my projects, a brief about me, and a contact form. 
 
-## Setup
+## Features
 
-1. Add RESEND_API_KEY environment variable in .env.local
-2. In the send-email.ts action file, change the "to" email to your own email
+- Responsive design that works on all devices
+- Dynamic routing for easy navigation
+- Project showcase with links to live demos and source code
+- Contact form to reach me directly
+
+## Technologies Used
+
+- **Next.js**: A React framework for building server-rendered applications.
+- **TypeScript**: A typed superset of JavaScript for improved development experience.
+- **CSS Modules**: For scoped and modular styles.
+- **Vercel**: For hosting the portfolio.
+
+## Installation
+
+To get started with the portfolio locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MeetaHaldar/Personal-portfolio.git
+   
+2. Navigate to the project directory:
+``` cd Personal-portfolio
+```
+3. Install dependencies:
+```
+npm install
+```
+4. Start the development server:
+```
+npm run dev
+```
+## Contacts 
+## Contact Me
+
+I’d love to hear from you! You can reach me through the following channels:
+
+- **Email**: [meeta0haldar2001@gmail.com](mailto:meeta0haldar2001@gmail.com)
+- **LinkedIn**: [Linkedln](https://www.linkedin.com/in/meeta-haldar-236091332/)
+
+Feel free to reach out for collaboration, questions, or just to say hello!
