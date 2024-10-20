@@ -30,23 +30,3 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: meetahladar/portfolio:latest
-
-  deploy:
-    needs: publish
-    name: deploy development image
-    runs-on: ubuntu-latest
-
-    steps:  
-      - name: executing remote ssh commands
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: 65504   
-          script: |
-            docker stop portfolio || true
-            docker rm portfolio || true 
-            docker pull meetahladar/portfolio:latest
-            docker run -d --name portfolio --restart unless-stopped -p 3000:3000 -v /root/docker/portfolio/.env:/usr/src/.env meetahladar/portfolio:latest
-            
