@@ -8,7 +8,6 @@ Welcome to my personal portfolio! This website showcases my projects, skills, an
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Contact](#contact)
 
 ## Introduction
 
@@ -37,7 +36,8 @@ To get started with the portfolio locally, follow these steps:
    git clone https://github.com/MeetaHaldar/Personal-portfolio.git
    
 2. Navigate to the project directory:
-``` cd Personal-portfolio
+```
+cd Personal-portfolio
 ```
 3. Install dependencies:
 ```
