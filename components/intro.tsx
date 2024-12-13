@@ -32,7 +32,7 @@ export default function Intro() {
             }}
           >
             <Image
-              src={https://avatars.githubusercontent.com/u/69325431?v=4}
+              src="https://avatars.githubusercontent.com/u/69325431?v=4"
               alt="Meeta Haldar"
               width="192"
               height="192"
