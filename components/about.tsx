@@ -19,14 +19,10 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-    After completing my BTech, I delved deep into the world of coding and technology, exploring various tech stacks including{" "}
-    <span className="font-medium">React.js, Node.js, and Vue.js</span>. With a knack for problem-solving, I crafted numerous personal projects and even interned as a full-stack developer, creating APIs for commercial websites. Additionally, my passion for tech extends to writing about it, leading me to intern as a Technical Engineer at GFG.
+ I am Meeta Haldar, a passionate software developer with a strong foundation in web development and technical problem-solving. I hold a Bachelor of Technology (B.Tech) from NSUT West Campus, where I graduated with a CGPA of 8.9. I have worked as a full-time MTS at GeeksforGeeks, where I contributed to streamlining the write portal, improving navigation, and resolving critical bugs for enhanced stability. Additionally, I developed secure RESTful APIs with JWT authentication, ensuring robust performance and data protection. I am committed to continuously learning and optimizing user experiences through innovative and efficient solutions.
 
 </p>
 
-<p>
-    <span className="italic">When I'm not coding</span>, I find joy in reading, dancing, and immersing myself in movies. Now, I'm eager to bring my diverse skills and unwavering enthusiasm to a full-time role in software development, where I can continue to learn and grow.
-</p>
 
 
     </motion.section>
