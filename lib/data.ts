@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
 import DailyWave from "@/public/DailyWave.png";
@@ -34,11 +34,9 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Technical Engineer",
+    title: " Member of Technical Staff",
     location: "GeeksForGeeks, Noida",
-    description: `Led multiple MERN stack projects, focusing on debugging and UI design. Improved user experience through optimized interfaces and
-quick resolution of technical issues. Wrote clear and comprehensive API documentation. Ensured easy understanding and smooth
-integration of APIs by other development team members`,
+    description: `As a full-time MTS, I streamlined the GeeksforGeeks write portal by managing functionality, enhancing navigation with a dynamic side menu, and resolving critical bugs for improved stability. I developed secure RESTful APIs with JWT authentication, ensuring robust performance and data protection while contributing to an optimized user experience.`,
     icon: React.createElement(CgWorkAlt),
     date: "2023- Current",
   },
