@@ -1,7 +1,7 @@
 /** @type {import('next').N
  * extConfig} */
 const nextConfig = {
-  output: "export",
+reactStrictMode: true,
   experimental: {
     serverActions: true,
   },
