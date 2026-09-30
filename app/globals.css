@@ -2,14 +2,325 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  --line-color: #e5e7eb;
+/* ============================================================
+   Design tokens — warm, editorial, feminine personal brand
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  /* Warm blush background, soft cream surfaces, deep plum ink. */
+  --bg: #fdf7f4;
+  --surface: #fffdfb;
+  --surface-2: #f8ede9;
+  --ink: #2a1e26;
+  --muted: #6f5f68;
+  --subtle: #a2909a;
+  --line: #efe0da;
+
+  /* Primary accent: rose. Secondary: plum. Tertiary: warm gold. */
+  --accent: #c05b7e;
+  --accent-2: #8b5a9e;
+  --gold: #d9a45b;
+  --accent-ink: #ffffff;
+  --accent-soft: #fbe7ee;
+
+  /* Decorative aurora / blob tints. */
+  --blob-1: rgba(192, 91, 126, 0.28);
+  --blob-2: rgba(139, 90, 158, 0.24);
+  --blob-3: rgba(217, 164, 91, 0.22);
+
+  --ease-out-cubic: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
-html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+.dark {
+  color-scheme: dark;
+
+  --bg: #17111a;
+  --surface: #1f1722;
+  --surface-2: #291f2e;
+  --ink: #f6ecf1;
+  --muted: #c4b2bf;
+  --subtle: #8f7d8a;
+  --line: #362a3c;
+
+  --accent: #e88aa8;
+  --accent-2: #c39ad6;
+  --gold: #e8bd7e;
+  --accent-ink: #17111a;
+  --accent-soft: #2c2030;
+
+  --blob-1: rgba(232, 138, 168, 0.22);
+  --blob-2: rgba(195, 154, 214, 0.2);
+  --blob-3: rgba(232, 189, 126, 0.16);
 }
 
-.borderBlack {
-  @apply border border-black/10;
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  section[id],
+  [data-scroll-anchor] {
+    scroll-margin-top: 6rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+}
+
+/* ============================================================
+   Components / utilities
+   ============================================================ */
+@layer components {
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .prose-body {
+    color: var(--muted);
+    max-width: 65ch;
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    line-height: 1.75;
+  }
+
+  /* Gradient text used on headline highlights. */
+  .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--accent) 0%,
+      var(--accent-2) 55%,
+      var(--gold) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+  }
+  .text-gradient-animate {
+    animation: gradient-pan 6s linear infinite;
+  }
+
+  /* Animated underline that grows from the left. */
+  .link-underline {
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.35s var(--ease-out-cubic);
+    padding-bottom: 1px;
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 2px;
+  }
+
+  /* Soft card with gradient hairline border on hover. */
+  .card-soft {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    transition:
+      transform 0.4s var(--ease-out-cubic),
+      box-shadow 0.4s var(--ease-out-cubic),
+      border-color 0.4s var(--ease-out-cubic);
+  }
+  .card-soft:hover {
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow:
+      0 1px 0 0 var(--accent-soft),
+      0 18px 40px -18px var(--blob-1);
+  }
+
+  /* Decorative aurora blobs (pure CSS, GPU-friendly). */
+  .aurora {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-accent {
+    background-image: linear-gradient(120deg, var(--accent), var(--accent-2));
+  }
+  .border-gradient-accent {
+    border-color: var(--accent);
+  }
+}
+
+/* Reveal-on-scroll base states (progressive enhancement). */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s var(--ease-out-cubic),
+    transform 0.7s var(--ease-out-cubic);
+  will-change: opacity, transform;
+}
+.reveal[data-dir="left"] {
+  transform: translateX(-28px);
+}
+.reveal[data-dir="right"] {
+  transform: translateX(28px);
+}
+.reveal[data-dir="scale"] {
+  transform: scale(0.94);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes gradient-pan {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(24px, -18px) scale(1.08);
+  }
+  66% {
+    transform: translate(-18px, 14px) scale(0.96);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hero entrance helpers (short, do not delay LCP text meaningfully). */
+.animate-fade-up {
+  animation: fade-up 0.7s var(--ease-out-cubic) both;
+}
+
+.motion-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+/* Staggered mobile-menu link entrance (delay set inline per item). */
+@keyframes mm-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.mm-link {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: mm-in 0.4s var(--ease-out-cubic) forwards;
+}
+.no-js .mm-link {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

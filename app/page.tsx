@@ -1,21 +1,25 @@
-import About from "@/components/about";
-import Contact from "@/components/contact";
-import Experience from "@/components/experience";
-import Intro from "@/components/intro";
-import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
-import Skills from "@/components/skills";
+import { Hero } from "@/components/sections/Hero";
+import { CredibilityStrip } from "@/components/sections/CredibilityStrip";
+import { SelectedWork } from "@/components/sections/SelectedWork";
+import { Experience } from "@/components/sections/Experience";
+import { Services } from "@/components/sections/Services";
+import { HowIWork } from "@/components/sections/HowIWork";
+import { About } from "@/components/sections/About";
+import { TechStack } from "@/components/sections/TechStack";
+import { ContactCTA } from "@/components/sections/ContactCTA";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="flex flex-col items-center px-4">
-      <Intro />
-      <SectionDivider />
-      <About />
-      <Projects />
-      <Skills />
+    <>
+      <Hero />
+      <CredibilityStrip />
+      <SelectedWork />
       <Experience />
-      <Contact />
-    </main>
+      <Services />
+      <HowIWork />
+      <About />
+      <TechStack />
+      <ContactCTA />
+    </>
   );
 }

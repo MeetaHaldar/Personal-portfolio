@@ -1,42 +1,100 @@
-import Header from "@/components/header";
+import type { Metadata, Viewport } from "next";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/active-section-context";
-import Footer from "@/components/footer";
-import ThemeSwitch from "@/components/theme-switch";
-import ThemeContextProvider from "@/context/theme-context";
-import { Toaster } from "react-hot-toast";
+import { site } from "@/data/site";
+import { resolveBaseUrl } from "@/lib/seo";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/layout/JsonLd";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
-export const metadata = {
-  title: "Meeta Haldar | Personal Portfolio",
-  description: "Meeta is a full-stack developer.",
+const display = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-display",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-mono",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(resolveBaseUrl()),
+  title: {
+    default: `${site.name} — ${site.title}`,
+    template: `%s — ${site.name}`,
+  },
+  description: site.seo.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: `${site.name} — ${site.title}`,
+    description: site.seo.description,
+    siteName: site.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.title}`,
+    description: site.seo.description,
+  },
+  robots: { index: true, follow: true },
+  icons: {
+    icon: "/icon.svg",
+    // Add a 180×180 PNG at /public/apple-icon.png for iOS home-screen icons.
+  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fdf7f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#17111a" },
+  ],
+};
+
+// Runs before paint to set the theme class and avoid a flash of the wrong theme.
+const themeScript = `
+(function(){
+  try {
+    var t = localStorage.getItem('theme');
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (t === 'dark') document.documentElement.classList.add('dark');
+  } catch (e) {}
+  document.documentElement.classList.remove('no-js');
+})();
+`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
-      >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
-
-        <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Footer />
-
-            <Toaster position="top-right" />
-            <ThemeSwitch />
-          </ActiveSectionContextProvider>
-        </ThemeContextProvider>
+    <html
+      lang="en"
+      className={`no-js ${sans.variable} ${display.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-bg"
+        >
+          Skip to content
+        </a>
+        <Navbar />
+        <main id="main">{children}</main>
+        <Footer />
+        <JsonLd />
       </body>
     </html>
   );
