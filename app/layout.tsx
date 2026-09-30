@@ -6,6 +6,7 @@ import { resolveBaseUrl } from "@/lib/seo";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/layout/JsonLd";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -16,7 +17,9 @@ const sans = Inter({
 
 const display = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
   display: "swap",
   variable: "--font-display",
 });
@@ -57,8 +60,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fdf7f4" },
-    { media: "(prefers-color-scheme: dark)", color: "#17111a" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f4ee" },
+    { media: "(prefers-color-scheme: dark)", color: "#121110" },
   ],
 };
 
@@ -91,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <ScrollProgress />
         <Navbar />
         <main id="main">{children}</main>
         <Footer />

@@ -11,13 +11,82 @@ import { TODO } from "@/data/site";
  */
 export const projects: Project[] = [
   {
+    slug: "room-scholars",
+    title: "Room Scholars",
+    category: "Product · Student Accommodation Platform",
+    summary: "A student accommodation platform with listings, search, and user and admin portals.",
+    description:
+      "A student accommodation product covering property and room listings, search and university- or country-based discovery, with separate user and admin portals.",
+    featured: true,
+    role: "Associate Software Developer",
+    timeframe: "2026 – Present",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Razorpay"],
+    features: [
+      "Student accommodation and property listings",
+      "Rooms with property and room images",
+      "Search and university / country-based discovery",
+      "User and admin portals",
+      "Amenities, map functionality and WhatsApp contact",
+      "Admin property management",
+    ],
+    cover: {
+      src: "/projects/room-scholars/cover.png",
+      alt: "Room Scholars homepage showing student accommodation search near top universities",
+      width: 1600,
+      height: 1000,
+    },
+    overview:
+      "Room Scholars is a student accommodation platform that helps students discover and enquire about properties and rooms, with a dedicated portal for administrators to manage listings.",
+    problem:
+      "Students looking for accommodation need a clear way to discover properties by university or country, browse rooms with images and amenities, and get in touch, while administrators need to manage those listings in one place.",
+    // TODO_MODULES: specify the exact modules you own on the platform and refine this.
+    contribution: "I work on software and product development on the Room Scholars platform.",
+    techGroups: [
+      { label: "Frontend", items: ["Next.js", "TypeScript", "Tailwind CSS"] },
+      { label: "Data & media", items: ["MongoDB", "Cloudinary"] },
+      { label: "Integrations", items: ["Razorpay", "Maps", "APIs"] },
+      { label: "Motion", items: ["Framer Motion"] },
+    ],
+    architecture: {
+      flow: ["Next.js app (user + admin)", "APIs", "MongoDB"],
+      note: "Media is stored and served through Cloudinary; payments run through Razorpay; discovery uses map and location data.",
+      textAlt:
+        "The Next.js application serves both the user and admin portals and calls APIs that read from and write to MongoDB. Media is handled through Cloudinary, payments through Razorpay, and discovery uses map and location data.",
+    },
+    liveUrl: "https://www.roomscholars.com/",
+    screenshots: [
+      {
+        src: null,
+        alt: "Property listing page with room images",
+        width: 1600,
+        height: 1000,
+        caption: "Listings and rooms",
+      },
+      {
+        src: null,
+        alt: "Search and discovery by university or country",
+        width: 1600,
+        height: 1000,
+        caption: "Search and discovery",
+      },
+      {
+        src: null,
+        alt: "Admin property management portal",
+        width: 1600,
+        height: 1000,
+        caption: "Admin portal",
+      },
+    ],
+    githubUrl: undefined,
+  },
+
+  {
     slug: "inventory-management-system",
     title: "Inventory Management System",
     category: "Business Application · Full-Stack",
     summary: "One system to manage stock, transfers, sales and invoices with role-based access.",
     description:
       "An end-to-end system for managing stock across boxes, transfers between locations and companies, sales and invoicing, where each person sees and does only what their role allows.",
-    featured: true,
     role: "Full-Stack Developer",
     timeframe: "2025 – 2026",
     tech: ["React", "Node.js", "Express.js", "Database design", "REST APIs"],
@@ -80,76 +149,6 @@ export const projects: Project[] = [
     ],
     liveUrl: TODO.SITE_URL, // hidden until a real live URL is provided
     githubUrl: undefined, // hidden unless provided
-  },
-
-  {
-    slug: "room-scholars",
-    title: "Room Scholars",
-    category: "Product · Student Accommodation Platform",
-    summary: "A student accommodation platform with listings, search, and user and admin portals.",
-    description:
-      "A student accommodation product covering property and room listings, search and university- or country-based discovery, with separate user and admin portals.",
-    role: "Associate Software Developer",
-    timeframe: "2026 – Present",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Razorpay"],
-    features: [
-      "Student accommodation and property listings",
-      "Rooms with property and room images",
-      "Search and university / country-based discovery",
-      "User and admin portals",
-      "Amenities, map functionality and WhatsApp contact",
-      "Admin property management",
-    ],
-    cover: {
-      // Add the real cover at /public/projects/room-scholars/cover.png (1600×1000).
-      src: null,
-      alt: "Room Scholars platform cover",
-      width: 1600,
-      height: 1000,
-    },
-    overview:
-      "Room Scholars is a student accommodation platform that helps students discover and enquire about properties and rooms, with a dedicated portal for administrators to manage listings.",
-    problem:
-      "Students looking for accommodation need a clear way to discover properties by university or country, browse rooms with images and amenities, and get in touch, while administrators need to manage those listings in one place.",
-    // TODO_MODULES: specify the exact modules you own on the platform and refine this.
-    contribution: "I work on software and product development on the Room Scholars platform.",
-    techGroups: [
-      { label: "Frontend", items: ["Next.js", "TypeScript", "Tailwind CSS"] },
-      { label: "Data & media", items: ["MongoDB", "Cloudinary"] },
-      { label: "Integrations", items: ["Razorpay", "Maps", "APIs"] },
-      { label: "Motion", items: ["Framer Motion"] },
-    ],
-    architecture: {
-      flow: ["Next.js app (user + admin)", "APIs", "MongoDB"],
-      note: "Media is stored and served through Cloudinary; payments run through Razorpay; discovery uses map and location data.",
-      textAlt:
-        "The Next.js application serves both the user and admin portals and calls APIs that read from and write to MongoDB. Media is handled through Cloudinary, payments through Razorpay, and discovery uses map and location data.",
-    },
-    screenshots: [
-      {
-        src: null,
-        alt: "Property listing page with room images",
-        width: 1600,
-        height: 1000,
-        caption: "Listings and rooms",
-      },
-      {
-        src: null,
-        alt: "Search and discovery by university or country",
-        width: 1600,
-        height: 1000,
-        caption: "Search and discovery",
-      },
-      {
-        src: null,
-        alt: "Admin property management portal",
-        width: 1600,
-        height: 1000,
-        caption: "Admin portal",
-      },
-    ],
-    liveUrl: TODO.SITE_URL, // hidden until a real live URL is provided
-    githubUrl: undefined,
   },
 
   {

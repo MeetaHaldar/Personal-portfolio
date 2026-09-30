@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { CredibilityStrip } from "@/components/sections/CredibilityStrip";
 import { SelectedWork } from "@/components/sections/SelectedWork";
+import { Statement } from "@/components/sections/Statement";
 import { Experience } from "@/components/sections/Experience";
 import { Services } from "@/components/sections/Services";
 import { HowIWork } from "@/components/sections/HowIWork";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Hero />
       <CredibilityStrip />
       <SelectedWork />
+      <Statement />
       <Experience />
       <Services />
       <HowIWork />

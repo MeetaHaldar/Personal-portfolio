@@ -63,6 +63,8 @@ const config: Config = {
         "float-slow": "float-slow 7s ease-in-out infinite",
         "blob-drift": "blob-drift 18s ease-in-out infinite",
         shimmer: "shimmer 3s linear infinite",
+        wave: "wave 2.5s ease-in-out infinite",
+        "bounce-soft": "bounce-soft 1.8s ease-in-out infinite",
       },
     },
   },

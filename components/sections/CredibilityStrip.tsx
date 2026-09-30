@@ -12,7 +12,7 @@ const items: Array<{ label: string; statement: string }> = [
 
 export function CredibilityStrip() {
   return (
-    <section aria-label="At a glance" className="relative">
+    <section aria-label="At a glance" className="relative pt-16 sm:pt-24">
       <Container>
         <div className="bg-surface/70 rounded-xl border border-line p-2 shadow-soft backdrop-blur sm:p-3">
           <ul className="grid grid-cols-2 gap-2 md:grid-cols-4">

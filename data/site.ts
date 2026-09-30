@@ -8,10 +8,11 @@
 
 /** Placeholder sentinel values the owner must replace. */
 export const TODO = {
-  EMAIL: "TODO_EMAIL",
+  EMAIL: "meetahaldar1001@gmail.com",
   LINKEDIN_URL: "TODO_LINKEDIN_URL",
   GITHUB_URL: "TODO_GITHUB_URL",
   SITE_URL: "TODO_SITE_URL",
+  WEB3FORMS_KEY: "TODO_WEB3FORMS_ACCESS_KEY",
 } as const;
 
 /** Returns true when a value is still an unset TODO placeholder. */
@@ -35,6 +36,21 @@ export const site = {
     linkedin: TODO.LINKEDIN_URL,
     github: TODO.GITHUB_URL,
   },
+
+  /**
+   * Web3Forms access key for the contact form. This is how the form sends
+   * enquiries STRAIGHT TO YOUR INBOX (no email client opens for the visitor).
+   *
+   * How to get it (free, ~1 minute, no account/backend needed):
+   *   1. Go to https://web3forms.com
+   *   2. Enter the email address where you want to receive messages.
+   *   3. They email you an "Access Key" (a UUID). Paste it below.
+   *
+   * The key is a PUBLIC key by design — it is safe to ship in the frontend and
+   * only allows sending mail to the address you registered it with.
+   * Until it is set, the form shows a small note and stays disabled.
+   */
+  web3formsKey: TODO.WEB3FORMS_KEY,
 
   /** Public site origin, used for canonical URLs, sitemap and Open Graph. */
   url: TODO.SITE_URL,

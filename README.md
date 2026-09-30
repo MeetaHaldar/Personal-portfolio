@@ -50,7 +50,9 @@ not need to touch component code to update content.
 Defined in `data/site.ts`. Any link still set to a `TODO_` value is hidden or
 disabled automatically, so nothing renders as a broken link.
 
-- `TODO_EMAIL` — contact email (also enables the contact form).
+- `TODO_EMAIL` — contact email shown as a link in the contact section.
+- `TODO_WEB3FORMS_ACCESS_KEY` — `web3formsKey`; enables the contact form to send
+  messages to your inbox (see "Connecting the contact form" below).
 - `TODO_LINKEDIN_URL` — LinkedIn profile URL.
 - `TODO_GITHUB_URL` — GitHub profile URL.
 - `TODO_SITE_URL` — public site origin (used for canonical URLs, sitemap, OG).
@@ -75,12 +77,27 @@ to hide it). A downloadable CV is served from `public/CV.pdf`.
 
 ## Connecting the contact form to a service
 
-The form (`components/sections/ContactForm.tsx`) is frontend only. On submit it
-builds a `mailto:` link and opens the user's email client — no network requests.
+The form (`components/sections/ContactForm.tsx`) sends enquiries straight to the
+owner's inbox via [Web3Forms](https://web3forms.com) — no email client opens for
+the visitor, and there is no backend of our own. The browser POSTs the fields
+directly to the Web3Forms API, which emails the owner.
 
-To use a hosted form service later (Formspree, Web3Forms, Netlify Forms),
-replace the body of `handleSubmit` with a `fetch` POST to the service endpoint,
-keeping the existing validation and the `aria-live` status handling.
+To enable it:
+
+1. Go to https://web3forms.com and enter the email address where you want to
+   receive messages.
+2. Web3Forms emails you a free **Access Key** (a UUID). No account or backend
+   needed.
+3. Paste it into `web3formsKey` in `data/site.ts`.
+
+The access key is a public key by design — it is safe to ship in the frontend
+and only allows sending mail to the address you registered it with. Until the
+key is set, the form is disabled and shows a short note. This keeps the site a
+static frontend (compatible with `output: "export"`).
+
+To switch providers later (Formspree, Getform, Basin), change `ENDPOINT` and the
+payload keys in `ContactForm.tsx`; the validation, status handling and markup
+can stay the same.
 
 ## SEO
 
