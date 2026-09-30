@@ -33,8 +33,10 @@ export const site = {
   /** Contact + social. Replace TODO_ values; buttons hide until then. */
   email: TODO.EMAIL,
   socials: {
-    linkedin: TODO.LINKEDIN_URL,
+    linkedin: "https://www.linkedin.com/in/meetahaldar/",
     github: TODO.GITHUB_URL,
+    twitter: "https://twitter.com/Meeta_boss",
+    leetcode: "https://leetcode.com/MeetaHaldar/",
   },
 
   /**

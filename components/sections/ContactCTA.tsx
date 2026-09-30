@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, Github, Twitter, Code2, ArrowUpRight } from "lucide-react";
 import { site, isTodo } from "@/data/site";
 import { Section } from "@/components/ui/Section";
 
@@ -36,6 +36,24 @@ function contactLinks() {
       href: site.socials.github,
       external: true,
       Icon: Github,
+    });
+  }
+  if (!isTodo(site.socials.twitter)) {
+    links.push({
+      label: "Twitter",
+      handle: "Follow me",
+      href: site.socials.twitter,
+      external: true,
+      Icon: Twitter,
+    });
+  }
+  if (!isTodo(site.socials.leetcode)) {
+    links.push({
+      label: "LeetCode",
+      handle: "See my solutions",
+      href: site.socials.leetcode,
+      external: true,
+      Icon: Code2,
     });
   }
   return links;

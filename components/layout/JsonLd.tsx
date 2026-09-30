@@ -6,7 +6,12 @@ import { resolveBaseUrl } from "@/lib/seo";
  * and `url`/`email` are omitted while still placeholders.
  */
 export function JsonLd() {
-  const sameAs = [site.socials.linkedin, site.socials.github].filter((u) => !isTodo(u));
+  const sameAs = [
+    site.socials.linkedin,
+    site.socials.github,
+    site.socials.twitter,
+    site.socials.leetcode,
+  ].filter((u) => !isTodo(u));
 
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",

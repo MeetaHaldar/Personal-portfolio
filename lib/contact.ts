@@ -20,5 +20,11 @@ export function resolvedContactLinks(): ResolvedLink[] {
   if (!isTodo(site.socials.github)) {
     links.push({ label: "GitHub", href: site.socials.github });
   }
+  if (!isTodo(site.socials.twitter)) {
+    links.push({ label: "Twitter", href: site.socials.twitter });
+  }
+  if (!isTodo(site.socials.leetcode)) {
+    links.push({ label: "LeetCode", href: site.socials.leetcode });
+  }
   return links;
 }
